@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A97D892B0F189A00CB6C80 /* WeekClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97D882B0F189A00CB6C80 /* WeekClass.swift */; };
+		84A97D8B2B0F18BC00CB6C80 /* WeekClassTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */; };
 		93C7BF522B0EF58C00E35BC8 /* iosdecalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7BF512B0EF58C00E35BC8 /* iosdecalApp.swift */; };
 		93C7BF562B0EF58D00E35BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C7BF552B0EF58D00E35BC8 /* Assets.xcassets */; };
 		93C7BF592B0EF58D00E35BC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C7BF582B0EF58D00E35BC8 /* Preview Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84A97D882B0F189A00CB6C80 /* WeekClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClass.swift; sourceTree = "<group>"; };
+		84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClassTest.swift; sourceTree = "<group>"; };
 		93C7BF4E2B0EF58C00E35BC8 /* iosdecal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdecal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C7BF512B0EF58C00E35BC8 /* iosdecalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosdecalApp.swift; sourceTree = "<group>"; };
 		93C7BF552B0EF58D00E35BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				93C7BF572B0EF58D00E35BC8 /* Preview Content */,
 				93C7BF7D2B0EF64E00E35BC8 /* homescreen.swift */,
 				93C7BF7B2B0EF5BC00E35BC8 /* logscreen.swift */,
+				84A97D882B0F189A00CB6C80 /* WeekClass.swift */,
+				84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */,
 			);
 			path = iosdecal;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A97D892B0F189A00CB6C80 /* WeekClass.swift in Sources */,
+				84A97D8B2B0F18BC00CB6C80 /* WeekClassTest.swift in Sources */,
 				93C7BF522B0EF58C00E35BC8 /* iosdecalApp.swift in Sources */,
 				93C7BF7C2B0EF5BC00E35BC8 /* logscreen.swift in Sources */,
 				93C7BF7E2B0EF64E00E35BC8 /* homescreen.swift in Sources */,
