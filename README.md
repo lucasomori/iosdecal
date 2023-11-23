@@ -1,2 +1,0 @@
-# iosdecal
-ios decal project
