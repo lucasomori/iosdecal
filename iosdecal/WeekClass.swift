@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import SwiftUI
 import SwiftData
 
 @Model
-class WeekClass : ObservableObject {
-    private var scoreDict: [String: Float?]
+class WeekClass {
+    var scoreDict: [String: Float?]
     
     init() {
         self.scoreDict = [
@@ -29,6 +28,7 @@ class WeekClass : ObservableObject {
     enum WeekDataError: Error {
         case invalidDay(String)
     }
+    
     func SetDayScore(forDay day: String, score value: Float) throws {
         guard scoreDict.keys.contains(day) else {
             print("Invalid day: \(day)")
@@ -53,7 +53,13 @@ class WeekClass : ObservableObject {
         }
     }
     
-    func GetCurrDay() -> String {
+    func GetCurrDayThrowaway() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: Date())
+    }
+    
+    static func GetCurrDay() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: Date())

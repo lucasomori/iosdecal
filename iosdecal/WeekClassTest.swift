@@ -6,14 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct WeekClassTest: View {
-    @State var week = WeekClass()
+    //@Environment(\.modelContext) var context
+    @State var week: WeekClass?
+    
     var body: some View {
-        Text(week.GetCurrDay())
+        Text(week?.GetCurrDayThrowaway() ?? "no")
+        .onAppear(perform: {
+                week = WeekClass()
+        })
     }
 }
 
 #Preview {
     WeekClassTest()
+        .modelContainer(for: WeekClass.self)
 }
