@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct WeekClassTest1: View {
+    //@Query var currWeek: WeekClass
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        //let score = currWeek.GetWeekScore()
+        //Text("Score: \(score)")
+        Text("Hello world!")
     }
 }
 

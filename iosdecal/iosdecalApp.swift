@@ -14,5 +14,6 @@ struct iosdecalApp: App {
         WindowGroup {
             LogView()
         }
+        .modelContainer(for: WeekClass.self)
     }
 }
