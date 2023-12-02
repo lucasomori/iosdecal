@@ -1,13 +1,23 @@
+//
+//  logscreen.swift
+//  vibecheck
+//
+//  Created by Lucas Omori on 12/1/23.
+//
+
 import SwiftUI
 
 struct LogView: View {
-    var day = "Sunday"
+    var day = WeekClass.GetCurrDay()
     
     // Separate @State properties for each question
     @State private var sleepWellOption: String? = nil
     @State private var exerciseOption: String? = nil
     @State private var socializeOption: String? = nil
     @State private var eatMealsOption: String? = nil
+    
+    // New @State property for counting "Y" clicks
+    @State private var yesCount = 0
 
     var body: some View {
         ZStack {
@@ -24,25 +34,25 @@ struct LogView: View {
                 // First Question
                 QuestionView(
                     question: "Did you sleep well?",
-                    selectedOption: $sleepWellOption
+                    selectedOption: $sleepWellOption, yesCount: $yesCount
                 )
                 
                 // Second Question
                 QuestionView(
                     question: "Did you exercise?",
-                    selectedOption: $exerciseOption
+                    selectedOption: $exerciseOption,  yesCount: $yesCount
                 )
                 
                 // Third Question
                 QuestionView(
                     question: "Did you socialize?",
-                    selectedOption: $socializeOption
+                    selectedOption: $socializeOption,  yesCount: $yesCount
                 )
                 
                 // Fourth Question
                 QuestionView(
                     question: "Did you eat 3 meals?",
-                    selectedOption: $eatMealsOption
+                    selectedOption: $eatMealsOption,  yesCount: $yesCount
                 )
             }
         }
@@ -52,6 +62,7 @@ struct LogView: View {
 struct QuestionView: View {
     var question: String
     @Binding var selectedOption: String?
+    @Binding var yesCount: Int  // Binding to the yes count
     
     var body: some View {
         VStack {
@@ -66,6 +77,7 @@ struct QuestionView: View {
             HStack {
                 Button(action: {
                     self.selectedOption = "Y"
+                    self.yesCount += 1  // Increment the counter
                 }) {
                     Text("Y")
                         .font(.system(size: 25))
@@ -106,4 +118,3 @@ struct LogView_Previews: PreviewProvider {
         LogView()
     }
 }
-
