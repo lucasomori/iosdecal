@@ -1,10 +1,3 @@
-//
-//  logscreen.swift
-//  vibecheck
-//
-//  Created by Lucas Omori on 12/1/23.
-//
-
 import SwiftUI
 
 struct LogView: View {
