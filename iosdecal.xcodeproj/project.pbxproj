@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		849243BD2B1C76A6009408FA /* ResultsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849243BC2B1C76A6009408FA /* ResultsScreen.swift */; };
 		84A97D892B0F189A00CB6C80 /* WeekClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97D882B0F189A00CB6C80 /* WeekClass.swift */; };
 		84A97D8B2B0F18BC00CB6C80 /* WeekClassTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */; };
 		84DB72352B1717BF00C7BD16 /* WeekClassTest1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB72342B1717BF00C7BD16 /* WeekClassTest1.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		849243BC2B1C76A6009408FA /* ResultsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsScreen.swift; sourceTree = "<group>"; };
 		84A97D882B0F189A00CB6C80 /* WeekClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClass.swift; sourceTree = "<group>"; };
 		84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClassTest.swift; sourceTree = "<group>"; };
 		84DB72342B1717BF00C7BD16 /* WeekClassTest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClassTest1.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				93C7BF7D2B0EF64E00E35BC8 /* homescreen.swift */,
 				93C7BF7B2B0EF5BC00E35BC8 /* logscreen.swift */,
 				84A97D882B0F189A00CB6C80 /* WeekClass.swift */,
+				849243BC2B1C76A6009408FA /* ResultsScreen.swift */,
 				84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */,
 				84DB72342B1717BF00C7BD16 /* WeekClassTest1.swift */,
 			);
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849243BD2B1C76A6009408FA /* ResultsScreen.swift in Sources */,
 				84A97D892B0F189A00CB6C80 /* WeekClass.swift in Sources */,
 				84A97D8B2B0F18BC00CB6C80 /* WeekClassTest.swift in Sources */,
 				93C7BF522B0EF58C00E35BC8 /* iosdecalApp.swift in Sources */,
