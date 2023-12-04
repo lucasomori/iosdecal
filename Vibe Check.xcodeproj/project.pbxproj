@@ -43,13 +43,13 @@
 		84A97D882B0F189A00CB6C80 /* WeekClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClass.swift; sourceTree = "<group>"; };
 		84A97D8A2B0F18BC00CB6C80 /* WeekClassTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClassTest.swift; sourceTree = "<group>"; };
 		84DB72342B1717BF00C7BD16 /* WeekClassTest1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClassTest1.swift; sourceTree = "<group>"; };
-		93C7BF4E2B0EF58C00E35BC8 /* iosdecal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosdecal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C7BF4E2B0EF58C00E35BC8 /* Vibe Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vibe Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C7BF512B0EF58C00E35BC8 /* iosdecalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosdecalApp.swift; sourceTree = "<group>"; };
 		93C7BF552B0EF58D00E35BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93C7BF582B0EF58D00E35BC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		93C7BF5E2B0EF58D00E35BC8 /* iosdecalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosdecalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C7BF5E2B0EF58D00E35BC8 /* Vibe CheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vibe CheckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C7BF622B0EF58D00E35BC8 /* iosdecalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosdecalTests.swift; sourceTree = "<group>"; };
-		93C7BF682B0EF58D00E35BC8 /* iosdecalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosdecalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93C7BF682B0EF58D00E35BC8 /* Vibe CheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Vibe CheckUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C7BF6C2B0EF58D00E35BC8 /* iosdecalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosdecalUITests.swift; sourceTree = "<group>"; };
 		93C7BF6E2B0EF58D00E35BC8 /* iosdecalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosdecalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		93C7BF7B2B0EF5BC00E35BC8 /* logscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logscreen.swift; sourceTree = "<group>"; };
@@ -94,9 +94,9 @@
 		93C7BF4F2B0EF58C00E35BC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93C7BF4E2B0EF58C00E35BC8 /* iosdecal.app */,
-				93C7BF5E2B0EF58D00E35BC8 /* iosdecalTests.xctest */,
-				93C7BF682B0EF58D00E35BC8 /* iosdecalUITests.xctest */,
+				93C7BF4E2B0EF58C00E35BC8 /* Vibe Check.app */,
+				93C7BF5E2B0EF58D00E35BC8 /* Vibe CheckTests.xctest */,
+				93C7BF682B0EF58D00E35BC8 /* Vibe CheckUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93C7BF4D2B0EF58C00E35BC8 /* iosdecal */ = {
+		93C7BF4D2B0EF58C00E35BC8 /* Vibe Check */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93C7BF722B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecal" */;
+			buildConfigurationList = 93C7BF722B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe Check" */;
 			buildPhases = (
 				93C7BF4A2B0EF58C00E35BC8 /* Sources */,
 				93C7BF4B2B0EF58C00E35BC8 /* Frameworks */,
@@ -157,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = iosdecal;
+			name = "Vibe Check";
 			productName = iosdecal;
-			productReference = 93C7BF4E2B0EF58C00E35BC8 /* iosdecal.app */;
+			productReference = 93C7BF4E2B0EF58C00E35BC8 /* Vibe Check.app */;
 			productType = "com.apple.product-type.application";
 		};
-		93C7BF5D2B0EF58D00E35BC8 /* iosdecalTests */ = {
+		93C7BF5D2B0EF58D00E35BC8 /* Vibe CheckTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93C7BF752B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecalTests" */;
+			buildConfigurationList = 93C7BF752B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe CheckTests" */;
 			buildPhases = (
 				93C7BF5A2B0EF58D00E35BC8 /* Sources */,
 				93C7BF5B2B0EF58D00E35BC8 /* Frameworks */,
@@ -175,14 +175,14 @@
 			dependencies = (
 				93C7BF602B0EF58D00E35BC8 /* PBXTargetDependency */,
 			);
-			name = iosdecalTests;
+			name = "Vibe CheckTests";
 			productName = iosdecalTests;
-			productReference = 93C7BF5E2B0EF58D00E35BC8 /* iosdecalTests.xctest */;
+			productReference = 93C7BF5E2B0EF58D00E35BC8 /* Vibe CheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		93C7BF672B0EF58D00E35BC8 /* iosdecalUITests */ = {
+		93C7BF672B0EF58D00E35BC8 /* Vibe CheckUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93C7BF782B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecalUITests" */;
+			buildConfigurationList = 93C7BF782B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe CheckUITests" */;
 			buildPhases = (
 				93C7BF642B0EF58D00E35BC8 /* Sources */,
 				93C7BF652B0EF58D00E35BC8 /* Frameworks */,
@@ -193,9 +193,9 @@
 			dependencies = (
 				93C7BF6A2B0EF58D00E35BC8 /* PBXTargetDependency */,
 			);
-			name = iosdecalUITests;
+			name = "Vibe CheckUITests";
 			productName = iosdecalUITests;
-			productReference = 93C7BF682B0EF58D00E35BC8 /* iosdecalUITests.xctest */;
+			productReference = 93C7BF682B0EF58D00E35BC8 /* Vibe CheckUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +221,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93C7BF492B0EF58C00E35BC8 /* Build configuration list for PBXProject "iosdecal" */;
+			buildConfigurationList = 93C7BF492B0EF58C00E35BC8 /* Build configuration list for PBXProject "Vibe Check" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -234,9 +234,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93C7BF4D2B0EF58C00E35BC8 /* iosdecal */,
-				93C7BF5D2B0EF58D00E35BC8 /* iosdecalTests */,
-				93C7BF672B0EF58D00E35BC8 /* iosdecalUITests */,
+				93C7BF4D2B0EF58C00E35BC8 /* Vibe Check */,
+				93C7BF5D2B0EF58D00E35BC8 /* Vibe CheckTests */,
+				93C7BF672B0EF58D00E35BC8 /* Vibe CheckUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,12 +304,12 @@
 /* Begin PBXTargetDependency section */
 		93C7BF602B0EF58D00E35BC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 93C7BF4D2B0EF58C00E35BC8 /* iosdecal */;
+			target = 93C7BF4D2B0EF58C00E35BC8 /* Vibe Check */;
 			targetProxy = 93C7BF5F2B0EF58D00E35BC8 /* PBXContainerItemProxy */;
 		};
 		93C7BF6A2B0EF58D00E35BC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 93C7BF4D2B0EF58C00E35BC8 /* iosdecal */;
+			target = 93C7BF4D2B0EF58C00E35BC8 /* Vibe Check */;
 			targetProxy = 93C7BF692B0EF58D00E35BC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -507,7 +507,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosdecal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iosdecal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibe Check.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vibe Check";
 			};
 			name = Debug;
 		};
@@ -526,7 +526,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iosdecal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iosdecal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibe Check.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vibe Check";
 			};
 			name = Release;
 		};
@@ -567,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93C7BF492B0EF58C00E35BC8 /* Build configuration list for PBXProject "iosdecal" */ = {
+		93C7BF492B0EF58C00E35BC8 /* Build configuration list for PBXProject "Vibe Check" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93C7BF702B0EF58D00E35BC8 /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93C7BF722B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecal" */ = {
+		93C7BF722B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe Check" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93C7BF732B0EF58D00E35BC8 /* Debug */,
@@ -585,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93C7BF752B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecalTests" */ = {
+		93C7BF752B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe CheckTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93C7BF762B0EF58D00E35BC8 /* Debug */,
@@ -594,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93C7BF782B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "iosdecalUITests" */ = {
+		93C7BF782B0EF58D00E35BC8 /* Build configuration list for PBXNativeTarget "Vibe CheckUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93C7BF792B0EF58D00E35BC8 /* Debug */,
