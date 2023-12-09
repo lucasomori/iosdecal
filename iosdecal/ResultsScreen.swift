@@ -1,7 +1,10 @@
 import SwiftUI
+import SwiftData
 
 struct ResultsScreen: View {
-    
+    @Query var checkWeeks: [WeekClass]
+    @State var action: Bool? = false
+
     var faces = [":(", ":/", ":|", ":)"]
     var statuses = ["Bad", "Alright", "Good", "Great"]
     var suggestions = ["Next week will be better! Try doing the things you love more!",
@@ -23,61 +26,67 @@ struct ResultsScreen: View {
         case 0.75...1:
             face = faces[3]; status = statuses[3]; suggest = suggestions[3]; vibeColor = vibeColors[3];
         default:
-            fatalError("How the hell did you get here? The score was \(score)")
+            face = faces[0]; status = statuses[0]; suggest = suggestions[0]; vibeColor = vibeColors[0];
         }
     }
     var body: some View {
-        ZStack {
-            Color.black.ignoresSafeArea()
-            VStack {
-                Text("The Vibe of this Week")
-                    .foregroundStyle(.white)
-                    .font(.largeTitle).bold()
-                    .padding(.top, 40)
-                
-                
-                Text(face)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 200))
-                    .bold()
-                    .padding(.top, 40)
-                
-                
-                Text(status)
-                    .font(.system(size: 25))
-                    .foregroundColor(.white)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .background(vibeColor)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding(.bottom, 10)
-                
-                
-                Text(suggest)
-                    .font(.system(size: 25))
-                    .foregroundColor(.white)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal)
-                    .background(vibeColor)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding(.bottom, 10)
-                
-                Spacer()
-                
-                Button(action: {
-                           // Action to perform when the button is tapped
-                           // You can add your recording logic here
-                       }) {
-                           Text("Record new week")
-                               .font(.system(size: 25))
-                               .foregroundColor(.white)
-                               .padding(.top, 10)
-                               .padding(.horizontal)
-                               .padding(.bottom, 10)
-                               .background(Color.blue)
-                               .cornerRadius(20)
-                       }
-                       .padding()
+        NavigationView {
+            ZStack {
+                Color.black.ignoresSafeArea()
+                VStack {
+                    Text("The Vibe of this Week")
+                        .foregroundStyle(.white)
+                        .font(.largeTitle).bold()
+                        .padding(.top, 40)
+                    
+                    
+                    Text(face)
+                        .foregroundStyle(.white)
+                        .font(.system(size: 200))
+                        .bold()
+                        .padding(.top, 40)
+                    
+                    
+                    Text(status)
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal)
+                        .background(vibeColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding(.bottom, 10)
+                    
+                    
+                    Text(suggest)
+                        .font(.system(size: 25))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal)
+                        .background(vibeColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding(.bottom, 10)
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), tag: true, selection: $action) {
+                        EmptyView()
+                    }
+                    
+                    Button(action: {
+                        checkWeeks[0].RestartWeek()
+                        self.action = true
+                    }) {
+                        Text("Record new week")
+                            .font(.system(size: 25))
+                            .foregroundColor(.white)
+                            .padding(.top, 10)
+                            .padding(.horizontal)
+                            .padding(.bottom, 10)
+                            .background(Color.blue)
+                            .cornerRadius(20)
+                    }
+                    .padding()
+                }
             }
         }
     }

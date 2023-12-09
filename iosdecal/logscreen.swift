@@ -1,10 +1,14 @@
 import SwiftUI
+import SwiftData
 
 struct LogView: View {
+    @Environment(\.modelContext) var context
+
     @State private var action: Bool? = false
     @State private var canRate = false
     
     @State private var selectedOptions = 0
+    @Query var checkWeeks: [WeekClass]
 
     var day = WeekClass.GetCurrDay()
     
@@ -76,7 +80,14 @@ struct LogView: View {
                     .disabled(self.selectedOptions != 4)
                     .alert("Are you sure you want to submit?", isPresented: $showAlert) {
                         Button(role: .destructive) {
-                            print("LOL")
+                            print("YOU HAD \(self.yesCount) YESSES")
+                            if (checkWeeks.count < 1) {
+                                let newWeek = WeekClass()
+                                newWeek.SetDayScore(forDay: day, score: self.yesCount)
+                                context.insert(newWeek)
+                            } else {
+                                checkWeeks[0].SetDayScore(forDay: day, score: self.yesCount)
+                            }
                             self.action = true
                         } label: {
                             Text("Yes")

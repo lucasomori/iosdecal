@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct iosdecalApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            LogView()
+            HomeView()
         }
         .modelContainer(for: WeekClass.self)
     }

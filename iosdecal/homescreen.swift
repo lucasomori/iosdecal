@@ -1,10 +1,48 @@
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
+    @Environment(\.modelContext) var context
+    @Query var checkWeeks: [WeekClass]
+    
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday",
                 "Thursday", "Friday", "Saturday"]
     
+    let vibeColors = [Color.red, Color.orange, Color(red: 0.8, green: 0.7, blue: 0.2), Color(red: 0.7, green: 1, blue: 0), Color.green]
+
+    
+    func SetDayColor(day: String) -> Color {
+        if (checkWeeks.count < 1) {
+            return Color.white
+        } else {
+            var index = checkWeeks[0].GetDayScore(forDay: day)
+            if (index != nil) {
+                return vibeColors[index!]
+            } else {
+                return Color.white
+            }
+        }
+    }
+    
+    func CheckIfRatedDays() -> Bool {
+        if (checkWeeks.count < 1) {
+            print("HOW")
+            return false
+        } else {
+            if (checkWeeks[0].GetWeekScore() < 0) {
+                print("BUT WHY")
+                return false
+            } else {
+                print("YOUR SCORE WAS \(checkWeeks[0].GetWeekScore())")
+                return true
+            }
+        }
+    }
+
+    
     @State private var action: String? = nil
+    @State private var resultsAction: Bool? = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -26,9 +64,9 @@ struct HomeView: View {
                             self.dayButtonTapped(day: days[index])
                         }) {
                             Circle()
-                                .strokeBorder(Color.white, lineWidth: 2)
+                                .strokeBorder(SetDayColor(day: days[index]), lineWidth: 2)
                                 .frame(width: 48, height: 48)
-                                .overlay(Text(days[index].prefix(1)).foregroundColor(.white))
+                                .overlay(Text(days[index].prefix(1)).foregroundColor(SetDayColor(day: days[index])))
                                 .font(.system(size: 25))
                             
                         }
@@ -36,10 +74,17 @@ struct HomeView: View {
                     }
                     
                     Spacer()
-                    
+                    if (checkWeeks.count > 0) {
+                        NavigationLink(destination:  ResultsScreen(score: checkWeeks[0].GetWeekScore()).navigationBarBackButtonHidden(true), tag: true, selection: $resultsAction) {
+                            EmptyView()
+                        }
+                    }
                     Button(action: {
-                        // Action to perform when the button is tapped
-                        // You can add your recording logic here
+                        if (checkWeeks.count > 0) {
+                            self.resultsAction = true
+                        } else {
+                            print("NO DAY RATED ME MAD >:(((((((")
+                        }
                     }) {
                         Text("Rate Your Week")
                             .font(.system(size: 25))
@@ -50,6 +95,7 @@ struct HomeView: View {
                             .background(Color.blue)
                             .cornerRadius(20)
                     }
+                    .disabled((WeekClass.GetCurrDay() != "Saturday" && !CheckIfRatedDays()))
                     .padding()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -66,8 +112,6 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+#Preview {
+    HomeView().modelContainer(for: WeekClass.self)
 }
