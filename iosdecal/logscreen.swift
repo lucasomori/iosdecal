@@ -3,6 +3,7 @@ import SwiftData
 
 struct LogView: View {
     @Environment(\.modelContext) var context
+    @Environment(\.presentationMode) var presentationMode
 
     @State private var action: Bool? = false
     @State private var canRate = false
@@ -25,7 +26,7 @@ struct LogView: View {
 
 
     var body: some View {
-        NavigationView {
+        //NavigationView {
         ZStack {
             Color.black.ignoresSafeArea()
                 VStack {
@@ -60,13 +61,12 @@ struct LogView: View {
                         question: "Did you eat 3 meals?",
                         selectedOption: $eatMealsOption,  yesCount: $yesCount, selectedOptions: $selectedOptions
                     )
-                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), tag: true, selection: $action) {
-                        EmptyView()
-                    }
+//                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), tag: true, selection: $action) {
+//                        EmptyView()
+//                    }
                     
                     Button(action: {
                         showAlert = true
-                        print(self.selectedOptions)
                     }) {
                         Text("Rate Your Day")
                             .font(.system(size: 25))
@@ -80,7 +80,6 @@ struct LogView: View {
                     .disabled(self.selectedOptions != 4)
                     .alert("Are you sure you want to submit?", isPresented: $showAlert) {
                         Button(role: .destructive) {
-                            print("YOU HAD \(self.yesCount) YESSES")
                             if (checkWeeks.count < 1) {
                                 let newWeek = WeekClass()
                                 newWeek.SetDayScore(forDay: day, score: self.yesCount)
@@ -89,6 +88,7 @@ struct LogView: View {
                                 checkWeeks[0].SetDayScore(forDay: day, score: self.yesCount)
                             }
                             self.action = true
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Yes")
                         }
@@ -96,7 +96,7 @@ struct LogView: View {
                     .padding()
                 }
             }
-        }
+        //}
     }
 }
 
@@ -120,8 +120,6 @@ struct QuestionView: View {
                 Button(action: {
                     self.selectedOptions = self.selectedOption == nil ? self.selectedOptions + 1 : self.selectedOptions
                     self.yesCount = self.selectedOption != "Y" ? yesCount + 1 : yesCount
-                    print(self.yesCount)
-                    print(self.selectedOptions)
                     self.selectedOption = "Y"
                     
                 }) {
@@ -141,8 +139,6 @@ struct QuestionView: View {
                     self.selectedOptions = self.selectedOption == nil ? self.selectedOptions + 1 : self.selectedOptions
                     self.yesCount = self.selectedOption == "Y" ? yesCount - 1 : yesCount
                     self.selectedOption = "N"
-                    print(self.yesCount)
-                    print(self.selectedOptions)
                 }) {
                     Text("N")
                         .font(.system(size: 25))

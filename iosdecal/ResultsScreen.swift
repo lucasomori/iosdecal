@@ -4,6 +4,7 @@ import SwiftData
 struct ResultsScreen: View {
     @Query var checkWeeks: [WeekClass]
     @State var action: Bool? = false
+    @Environment(\.presentationMode) var presentationMode
 
     var faces = [":(", ":/", ":|", ":)"]
     var statuses = ["Bad", "Alright", "Good", "Great"]
@@ -30,7 +31,7 @@ struct ResultsScreen: View {
         }
     }
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ZStack {
                 Color.black.ignoresSafeArea()
                 VStack {
@@ -68,13 +69,13 @@ struct ResultsScreen: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), tag: true, selection: $action) {
-                        EmptyView()
-                    }
+//                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), tag: true, selection: $action) {
+//                        EmptyView()
+//                    }
                     
                     Button(action: {
                         checkWeeks[0].RestartWeek()
-                        self.action = true
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Record new week")
                             .font(.system(size: 25))
@@ -88,7 +89,7 @@ struct ResultsScreen: View {
                     .padding()
                 }
             }
-        }
+        //}
     }
 }
 

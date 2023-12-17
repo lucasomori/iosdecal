@@ -24,16 +24,23 @@ struct HomeView: View {
         }
     }
     
+    func CheckIfCanRateWeek() -> Bool {
+        if (WeekClass.GetCurrDay() == "Saturday") {
+            return CheckIfRatedDays()
+        }
+        return false
+    }
+    
     func CheckIfRatedDays() -> Bool {
         if (checkWeeks.count < 1) {
-            print("HOW")
+            //print("HOW")
             return false
         } else {
             if (checkWeeks[0].GetWeekScore() < 0) {
-                print("BUT WHY")
+                //print("BUT WHY")
                 return false
             } else {
-                print("YOUR SCORE WAS \(checkWeeks[0].GetWeekScore())")
+                //print("YOUR SCORE WAS \(checkWeeks[0].GetWeekScore())")
                 return true
             }
         }
@@ -75,15 +82,13 @@ struct HomeView: View {
                     
                     Spacer()
                     if (checkWeeks.count > 0) {
-                        NavigationLink(destination:  ResultsScreen(score: checkWeeks[0].GetWeekScore()).navigationBarBackButtonHidden(true), tag: true, selection: $resultsAction) {
+                        NavigationLink(destination:ResultsScreen(score: checkWeeks[0].GetWeekScore()).navigationBarBackButtonHidden(true), tag: true, selection: $resultsAction) {
                             EmptyView()
                         }
                     }
                     Button(action: {
                         if (checkWeeks.count > 0) {
                             self.resultsAction = true
-                        } else {
-                            print("NO DAY RATED ME MAD >:(((((((")
                         }
                     }) {
                         Text("Rate Your Week")
@@ -95,7 +100,7 @@ struct HomeView: View {
                             .background(Color.blue)
                             .cornerRadius(20)
                     }
-                    .disabled((WeekClass.GetCurrDay() != "Saturday" && !CheckIfRatedDays()))
+                    .disabled(!CheckIfCanRateWeek())
                     .padding()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
